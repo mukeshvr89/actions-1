@@ -1,0 +1,17 @@
+name: Second job
+on: [push, fork]
+jobs:
+  second_job:
+    name: system detail
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display system date
+        run: echo "Today date is $(date)"
+      - name: Check files name
+        run: ls 
+      - name: check the content of file
+        run: README.md
+  
+
+
+    

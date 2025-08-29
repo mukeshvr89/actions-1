@@ -12,5 +12,4 @@ jobs:
         run: |
               echo "Today date is $(date)"
               ls -al
-              pwd
               cat README.md

@@ -5,7 +5,8 @@ jobs:
     name: system detail
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: check out code.
+        uses: actions/checkout@v4
       - name: Display system date
         run: echo "Today date is $(date)"
       - name: Check files name

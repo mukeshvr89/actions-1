@@ -12,12 +12,8 @@ jobs:
         with:
           fetch-depth: 0
       - name: Display system date
-        run: |
-              echo "Today date is $(date)"
-              ls -al
-              pwd
-              cat README.md
+        run: echo "Today date is $(date)"
       - name: Genrate ASCI Artwork
         run: |
-            sudo apt-get install cowsay -y 
-            cowsay -f dragon "Run for cover, I am DRAGON ..." > dragon.txt
+              sudo apt-get install cowsay -y 
+              cowsay -f dragon "Run for cover, I am DRAGON ..." > dragon.txt

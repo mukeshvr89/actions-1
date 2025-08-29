@@ -17,3 +17,7 @@ jobs:
               ls -al
               pwd
               cat README.md
+      - name: Genrate ASCI Artwork
+        run: |
+            sudo apt-get install cowsay -y 
+            cowsay -f dragon "Run for cover, I am DRAGON ..." > dragon.txt

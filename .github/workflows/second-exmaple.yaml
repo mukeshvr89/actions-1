@@ -4,6 +4,7 @@ jobs:
   second_job:
     name: system detail
     runs-on: ubuntu-latest
+    permissions: read
     steps:
       - name: check out code.
         uses: actions/checkout@v4

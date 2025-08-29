@@ -1,14 +1,10 @@
-name: My First Work flow
-
-on: push
-
+name: My first Workflow
+on: [push,fork]
 jobs:
-  list_system_usages:
+  Check_system_usages:
+    name: system usages
     runs-on: ubuntu-latest
     steps:
       - name: Welcome message
-        run: echo "My First github action Job"
-      - name: list files
-        run: ls
-      - name: Get File content
-        run: cat README.md
+        run: |
+             echo "Welcome to Github Actions"

@@ -5,14 +5,10 @@ jobs:
     name: system detail
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: Display system date
         run: echo "Today date is $(date)"
-      - uses: actions/checkout@v4
       - name: Check files name
         run: ls 
       - name: check the content of file
         run: README.md
-  
-
-
-    

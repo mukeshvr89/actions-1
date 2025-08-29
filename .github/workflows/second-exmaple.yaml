@@ -1,5 +1,5 @@
 name: Second job
-on: [push, fork]
+on: push
 permissions: 
   contents: write
 jobs:
@@ -8,7 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: check out code.
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
       - name: Display system date
         run: echo "Today date is $(date)"
       - name: Check files name

@@ -11,4 +11,4 @@ jobs:
       - name: Check files name
         run: ls 
       - name: check the content of file
-        run: README.md
+        run: cat README.md

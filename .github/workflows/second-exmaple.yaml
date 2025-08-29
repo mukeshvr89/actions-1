@@ -1,7 +1,7 @@
 name: Second job
 on: [push, fork]
 permissions: 
-  contents: read
+  contents: write
 jobs:
   second_job:
     name: system detail

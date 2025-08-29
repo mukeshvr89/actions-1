@@ -1,10 +1,10 @@
 name: Second job
 on: [push, fork]
+permissions: read
 jobs:
   second_job:
     name: system detail
     runs-on: ubuntu-latest
-    permissions: read
     steps:
       - name: check out code.
         uses: actions/checkout@v4

@@ -13,11 +13,7 @@ jobs:
           fetch-depth: 0
       - name: Display system date
         run: |
-            echo "Today date is $(date)"
-            ls -al
-            pwd
-            if [ -f README.md ]; then
-            cat README.md
-            else
-            echo "README.md not found"
-            fi
+              echo "Today date is $(date)"
+              ls -al
+              pwd
+              cat README.md

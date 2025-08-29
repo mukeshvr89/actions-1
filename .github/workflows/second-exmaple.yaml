@@ -7,12 +7,13 @@ jobs:
     name: system detail
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - name: Checkout code
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
       - name: Display system date
-        run: ls -lrth
-      - name: Install packages
-        run: sudo apt-get install cowsay -y 
-      - name: Genrate ASCI Artwork
-        run:  cowsay -f dragon "Run for cover, I am DRAGON ..." > dragon.txt
+        run: |
+              echo "Today date is $(date)"
+              ls -al
+              pwd
+              cat README.md

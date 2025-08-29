@@ -13,21 +13,12 @@ jobs:
           fetch-depth: 0
 
       - name: Display system date
-        run: echo "Today date is $(date)"
-
-      - name: List all files in workspace
-        run: ls -al
-
-      - name: Check current directory
-        run: pwd
-
-      - name: Show Git info
-        run: git log -1
-
-      - name: Show README contents (if exists)
         run: |
-          if [ -f README.md ]; then
+            echo "Today date is $(date)"
+            ls -al
+            pwd
+            if [ -f README.md ]; then
             cat README.md
-          else
+            else
             echo "README.md not found"
-          fi
+            fi

@@ -4,11 +4,11 @@ jobs:
     third-job:
         runs-on: ubuntu
         steps:
-            - name: Checkout
-              uses: actions/checkout@v5.0.0
-            - name: list file
-              run: ls -lrth
-            - name: read file content
-              run: cat README.md
-            - name: check dates
-              run: echo "Today date is $(date)"
+        - name: Checkout
+          uses: actions/checkout@v5.0.0
+        - name: list file
+          run: ls -lrth
+        - name: read file content
+          run: cat README.md
+        - name: check dates
+          run: echo "Today date is $(date)"

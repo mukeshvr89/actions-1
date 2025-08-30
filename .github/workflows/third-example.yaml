@@ -8,13 +8,5 @@ jobs:
           uses: actions/checkout@v5.0.0
         - name: check system detail
           run: | 
-                ls -lrth
-                cat README.md
-                echo "Today date is $(date)"
-                sudo apt-get install cowsay -y
-        - name: Print ASCI content
-          run: cowsay -f dragon "This is DRGAON ... RAWR" >> dragon.txt
-        - name: Verify dragon
-          run: grep -i DRGAON dragon.txt
-        - name: Read file
-          run: cat dragon.txt
+                chmod +x cowsay-script.sh
+                ./cowsay-script.sh

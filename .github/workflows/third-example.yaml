@@ -1,12 +1,42 @@
-name: Third job
+name: Multi jobs Example
 on: push
 jobs:
-    third-job:
-        runs-on: ubuntu-latest
-        steps:
-        - name: Checkout
-          uses: actions/checkout@v5.0.0
-        - name: check system detail
-          run: | 
-                chmod +x cowsay-script.sh
-                ./cowsay-script.sh
+  build_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install cowsay package
+        run: | 
+              sudo apt-get install cowsay -y
+              cowsay -f dragon "This is a Dragon" >> dragon.txt
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-artifact
+          path: dragon.txt
+  
+  test_job:
+    needs: build_job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: my-artifact
+      - name: check Dragon
+        run: |
+              grep -i Dragon dragon.txt
+              sleep 10
+
+  deploy_job:
+    needs: test_job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: my-artifact
+      - name: Read file
+        run: |
+              ls -l dragon.txt
+              cat dragon.txt
+              sleep 10

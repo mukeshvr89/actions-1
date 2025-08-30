@@ -6,9 +6,15 @@ jobs:
         steps:
         - name: Checkout
           uses: actions/checkout@v5.0.0
-        - name: list file
-          run: ls -lrth
-        - name: read file content
-          run: cat README.md
-        - name: check dates
-          run: echo "Today date is $(date)"
+        - name: check system detail
+          run: | 
+                ls -lrth
+                cat README.md
+                echo "Today date is $(date)"
+                sudo apt-get install cowsay -y
+        - name: Print ASCI content
+          run: cowsay -f dragon "This is DRGAON ..." >> dragon.txt
+        - name: Verify dragon
+          run: grep -i dragon dragon.txt
+        - name: Read file
+          run: cat dragon.txt

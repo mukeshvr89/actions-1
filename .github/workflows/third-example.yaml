@@ -10,3 +10,5 @@ jobs:
               run: ls -lrth
             - name: read file content
               run: cat README.md
+            - name: check dates
+              run: echo "Today date is $(date)"

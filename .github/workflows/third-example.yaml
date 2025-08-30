@@ -13,8 +13,8 @@ jobs:
                 echo "Today date is $(date)"
                 sudo apt-get install cowsay -y
         - name: Print ASCI content
-          run: cowsay -f dragon "This is DRGAON ..." >> dragon.txt
+          run: cowsay -f dragon "This is DRGAON ... RAWR" >> dragon.txt
         - name: Verify dragon
-          run: grep -i dragon dragon.txt
+          run: grep -i DRGAON dragon.txt
         - name: Read file
           run: cat dragon.txt

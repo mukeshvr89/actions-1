@@ -28,5 +28,5 @@ jobs:
             run: |
                  curl -fsSL https://get.docker.com -o get-docker.sh
                  sudo sh ./get-docker.sh
-                 echo docker login ghcr.io  --username=${{ env.DOCKER_USERNAME}} --password=${{ env.DOCKER_PASSWORD}}
-                 docker run -d -p 8080:80 ${{ env.CONTAINER_REGISTRY }}/${{ env.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
+                 sudo echo docker login ghcr.io  --username=${{ env.DOCKER_USERNAME}} --password=${{ env.DOCKER_PASSWORD}}
+                 sudo docker run -d -p 8080:80 ${{ env.CONTAINER_REGISTRY }}/${{ env.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest

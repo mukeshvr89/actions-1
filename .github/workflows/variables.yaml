@@ -26,6 +26,7 @@ jobs:
             env:
                 DOCKER_PASSWORD: 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
             run: |
-                 sudo apt-get install docker -y
+                 curl -fsSL https://get.docker.com -o get-docker.sh
+                 sudo sh ./get-docker.sh
                  echo docker login ghcr.io  --username=${{ env.DOCKER_USERNAME}} --password=${{ env.DOCKER_PASSWORD}}
                  docker run -d -p 8080:80 ${{ env.CONTAINER_REGISTRY }}/${{ env.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
